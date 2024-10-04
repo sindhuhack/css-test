@@ -3,14 +3,51 @@ body {
 }
 
 .malicious {
-    background: url('http://testphp.vulnweb.com') no-repeat;
+    background: url('https://your-malicious-url-here') no-repeat; /* Placeholder for an external CSS URL */
     height: 100px;
     width: 100%;
     border: 2px solid red;
+    position: relative;
 }
 
 .malicious p {
     color: red;
     font-size: 20px;
     text-shadow: 2px 2px 5px black;
+}
+
+/* Overlay to obscure legitimate content */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.5); /* Red overlay to distract users */
+    z-index: 10; /* Make sure it's on top of other elements */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Button styled to appear legitimate but redirects */
+.redirect-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    position: relative; /* Position relative for overlay */
+    z-index: 20; /* Ensure it's above the overlay */
+}
+
+.redirect-button:hover {
+    background-color: darkblue;
+}
+
+/* Redirect on button click */
+.redirect-button:active {
+    background-color: darkred; /* Change color on click to indicate action */
 }
