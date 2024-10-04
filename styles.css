@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.malicious {
+    background: url('http://testphp.vulnweb.com') no-repeat;
+    height: 100px;
+    width: 100%;
+    border: 2px solid red;
+}
+
+.malicious p {
+    color: red;
+    font-size: 20px;
+    text-shadow: 2px 2px 5px black;
+}
