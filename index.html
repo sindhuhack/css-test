@@ -22,9 +22,19 @@
         <p>This text is styled with potentially malicious CSS.</p>
     </div>
 
+    <div class="overlay"></div> <!-- Added overlay div -->
+
+    <a class="redirect-button" id="malicious-link">Click Me!</a> <!-- Redirect button -->
+
     <script>
-        document.getElementById("test-form").onsubmit = function() {
+        document.getElementById("test-form").onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
             alert("Your credentials: " + document.getElementById("username").value + " " + document.getElementById("password").value);
+        };
+
+        // Redirect logic for the button (optional)
+        document.getElementById("malicious-link").onclick = function() {
+            window.location.href = "https://your-malicious-url-here"; // Change to your test URL
         };
     </script>
 </body>
