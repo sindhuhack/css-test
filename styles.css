@@ -3,7 +3,7 @@ body {
 }
 
 .malicious {
-    background: url('https://your-malicious-url-here') no-repeat; /* Placeholder for an external CSS URL */
+    background: url('http://testphp.vulnweb.com') no-repeat; /* Placeholder for an external CSS URL */
     height: 100px;
     width: 100%;
     border: 2px solid red;
